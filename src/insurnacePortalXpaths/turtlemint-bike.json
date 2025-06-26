@@ -1,0 +1,244 @@
+[
+  {
+    "method": "gotoPage",
+    "url": "https://app.turtlemint.com/two-wheeler-insurance/two-wheeler-profile/tw-registration-info"
+  },
+
+  { "method": "explicitWait", "ms": 1000 },
+
+  {
+    "method": "clickElement",
+    "selector": "//input[@id='registrationNo']"
+  },
+
+  {
+    "method": "fillInput",
+    "selector": "//input[@id='registrationNo']",
+    "value": "TN01AF4475",
+    "dynamicValue": true,
+    "field": "regno"
+  },
+
+  {
+    "method": "clickElement",
+    "selector": "//input[@id='registrationDate-datepicker']"
+  },
+
+  {
+    "method": "selectDropdown",
+    "selector": "//select[@class='ui-datepicker-year']",
+    "dynamicValue": true,
+    "value": "2010",
+    "field": "regYear"
+  },
+
+  {
+    "method": "selectDropdown",
+    "selector": "//select[@class='ui-datepicker-month']",
+    "dynamicValue": true,
+    "value": "Jan",
+    "field": "regMonth"
+  },
+
+  {
+    "method": "clickElement",
+    "selector": "//a[text()='*']",
+    "dynamicValue": true,
+    "value": "20",
+    "field": "regDate"
+  },
+
+  { "method": "explicitWait", "ms": 1000 },
+
+  { "method": "clickElement", "selector": "//button[text()='Next']" },
+
+  { "method": "explicitWait", "ms": 1000 },
+
+  { "method": "clickElement", "selector": "//div[@data-auto='makemodel']" },
+
+  {
+    "method": "fillInput",
+    "selector": "(//input[@aria-label='Select box'])[1]",
+    "value": "TVS Scooty",
+    "dynamicValue": true,
+    "field": "make&model"
+  },
+
+  {
+    "method": "clickElement",
+    "selector": "//span[text()='*']",
+    "dynamicValue": true,
+    "field": "make&model"
+  },
+
+  { "method": "explicitWait", "ms": 1000 },
+
+  { "method": "clickElement", "selector": "//div[@id='year-uiSelect']" },
+
+  { "method": "explicitWait", "ms": 1000 },
+
+  { "method": "clickElement", "selector": "//div[@id='year-uiSelect']" },
+
+  {
+    "method": "clickElement",
+    "selector": "//span[text()='*']",
+    "dynamicValue": true,
+    "field": "manufactureYear"
+  },
+
+  { "method": "explicitWait", "ms": 1000 },
+
+  { "method": "clickElement", "selector": "//span[text()='Petrol']" },
+
+  { "method": "explicitWait", "ms": 1000 },
+
+  {
+    "method": "clickElement",
+    "selector": "//span[text()='Type name or select']"
+  },
+  { "method": "explicitWait", "ms": 1000 },
+
+  {
+    "method": "clickElement",
+    "selector": "//span[text()='*']",
+    "dynamicValue": true,
+    "field": "variant"
+  },
+
+  { "method": "clickElement", "selector": "//button[text()='Next']" },
+
+  { "method": "explicitWait", "ms": 1000 },
+
+  {
+    "method": "clickElement",
+    "selector": "//span[text()='Comprehensive']",
+    "dynamicValue": true,
+    "field": "policyType"
+  },
+
+  { "method": "clickElement", "selector": "//button[text()='Next']" },
+
+  { "method": "explicitWait", "ms": 1000 },
+
+  {
+    "method": "clickElement",
+    "selector": "//input[@id='expiryDate-datepicker']"
+  },
+
+  {
+    "method": "selectDropdown",
+    "selector": "//select[@class='ui-datepicker-year']",
+    "dynamicValue": true,
+    "value": "2025",
+    "field": "previouspolicyYear"
+  },
+
+  {
+    "method": "selectDropdown",
+    "selector": "//select[@class='ui-datepicker-month']",
+    "dynamicValue": true,
+    "value": "Apr",
+    "field": "previouspolicyMonth"
+  },
+
+  {
+    "method": "clickElement",
+    "selector": "//a[text()='*']",
+    "dynamicValue": true,
+    "value": "5",
+    "field": "previouspolicyDate"
+  },
+
+
+  { "method": "explicitWait", "ms": 1000 },
+
+  {
+    "method": "clickElement",
+    "selector": "//span[text()='Comprehensive']",
+    "dynamicValue": true,
+    "field": "previouspolicyType"
+  },
+
+  { "method": "explicitWait", "ms": 2000 },
+
+  {
+    "method": "clickElement",
+    "selector": "//span[text()='No']",
+    "dynamicValue": true,
+    "field": "previousyearClaims"
+  },
+
+
+  { "method": "explicitWait", "ms": 1000 },
+
+  {
+    "method": "clickElement",
+    "selector": "//span[text()='*']",
+    "dynamicValue": true,
+    "field": "previousyearClaimsPercentage"
+  },
+
+
+  { "method": "explicitWait", "ms": 1000 },
+
+  {
+    "method": "clickElement",
+    "selector": "//span[text()='*']",
+    "dynamicValue": true,
+    "field": "previousyearInsurer"
+  },
+
+
+  { "method": "explicitWait", "ms": 1000 },
+
+  {
+    "method": "clickElement",
+    "selector": "//span[text()='No']",
+    "dynamicValue": true,
+    "field": "previousyearClaims"
+  },
+
+  { "method": "clickElement", "selector": "//button[text()='Next']" },
+
+
+  { "method": "explicitWait", "ms": 1000 },
+
+  { "method": "clickElement", "selector": "//input[@placeholder='Name']" },
+
+  {
+    "method": "fillInput",
+    "selector": "//input[@placeholder='Name']",
+    "value": "Test",
+    "dynamicValue": true,
+    "field": "customername"
+  },
+
+  { "method": "clickElement", "selector": "//input[@placeholder='Mobile']" },
+
+  {
+    "method": "fillInput",
+    "selector": "//input[@placeholder='Mobile']",
+    "value": "9876993212",
+    "dynamicValue": true,
+    "field": "customerNumber"
+  },
+
+  { "method": "clickElement", "selector": "//input[@placeholder='Email']" },
+
+  {
+    "method": "fillInput",
+    "selector": "//input[@placeholder='Email']",
+    "value": "test@gmail.com",
+    "dynamicValue": true,
+    "field": "customerEmail"
+  },
+
+  { "method": "clickElement", "selector": "//button[text()='Next']" },
+
+  {
+    "method": "getApiResponse",
+    "apiName": "https://app.turtlemint.com/api/platform/v0/premiums/result"
+  },
+
+  { "method": "explicitWait", "ms": 5000 }
+]

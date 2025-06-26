@@ -1,0 +1,169 @@
+{
+  "id": 2,
+  "name": "roayl",
+  "product": "Bike",
+  "steps": [
+    {
+      "method": "gotoPage",
+      "url": "https://ilounge.royalsundaram.in/iPolicyMotor/login"
+    },
+    {
+      "method": "fillInput",
+      "selector": "//input[@id='uName' ]",
+      "value": "BA515523_ravindran"
+    },
+    { "method": "clickElement", "selector": "//button[text()='Sign In' ]" },
+    {
+      "method": "fillInput",
+      "selector": "//input[@id='pWord' ]",
+      "value": "Royal@123"
+    },
+    { "method": "clickElement", "selector": "//button[text()='Sign In' ]" },
+    {
+      "method": "clickElement",
+      "selector": "//a[contains(text(), 'Motor Cycle')]"
+    },
+    {
+      "method": "fillInput",
+      "selector": "//input[@id='registrationNoPart1']",
+      "value": "TN",
+      "dynamicValue": true,
+      "field": "regno1"
+    },
+    {
+      "method": "fillInput",
+      "selector": "//input[@id='registrationNoPart2']",
+      "value": "11",
+      "dynamicValue": true,
+      "field": "regno2"
+    },
+    {
+      "method": "fillInput",
+      "selector": "//input[@id='registrationNoPart3']",
+      "value": "AF",
+      "dynamicValue": true,
+      "field": "regno3"
+    },
+    {
+      "method": "fillInput",
+      "selector": "//input[@id='registrationNoPart4']",
+      "value": "4693",
+      "dynamicValue": true,
+      "field": "regno4"
+    },
+    { "method": "clickElement", "selector": "//button[@id='get_started']" },
+    { "method": "clickElement", "selector": "//a[text()='Proceed']" },
+    { "method": "explicitWait", "ms": 3000 },
+    {
+      "method": "selectAutocompleteOption",
+      "selector": "//input[@name='makeCode']",
+      "value": "807624-TVS",
+      "dynamicValue": true,
+      "field": "make"
+    },
+    {
+      "method": "selectAutocompleteOption",
+      "selector": "//input[@name='modelCode']",
+      "value": " Scooty",
+      "dynamicValue": true,
+      "field": "model"
+    },
+    { "method": "clickElement", "selector": "(//a[text()='OK'])[7]" },
+    { "method": "clickElement", "selector": "//button[@id='view_plan']" },
+    {
+      "method": "clickElement",
+      "selector": "//select[@id='previousPolicyType']"
+    },
+    {
+      "method": "selectDropdown",
+      "selector": "select#previousPolicyType",
+      "value": "Comprehensive",
+      "dynamicValue": true,
+      "field": "previousPolicyType"
+    },
+    { "method": "clickElement", "selector": "//select[@id='claimsFreeYears']" },
+    {
+      "method": "selectDropdown",
+      "selector": "select#claimsFreeYears",
+      "value": "20",
+      "dynamicValue": true,
+      "field": "claimsFreeYears"
+    },
+    {
+      "method": "clickElement",
+      "selector": "//button[@class='p-element p-ripple p-datepicker-trigger ng-tns-c3108139663-9 p-button p-component p-button-icon-only ng-star-inserted']"
+    },
+    { "method": "explicitWait", "ms": 500 },
+    {
+      "method": "clickElement",
+      "selector": "//button[text()=' * ']",
+      "dynamicValue": true,
+      "field": "year"
+    },
+    { "method": "explicitWait", "ms": 500 },
+    {
+      "method": "clickElement",
+      "selector": "//span[text()=' * ']",
+      "dynamicValue": true,
+      "field": "year"
+    },
+    { "method": "explicitWait", "ms": 500 },
+    {
+      "method": "clickElement",
+      "selector": "//span[text()=' * ']",
+      "dynamicValue": true,
+      "field": "month"
+    },
+    {
+      "method": "clickElement",
+      "selector": "(//span[text()='*'])[1]",
+      "dynamicValue": true,
+      "field": "date"
+    },
+    { "method": "clickElement", "selector": "//button[@id='view_plan']" },
+    { "method": "explicitWait", "ms": 3000 },
+    { "method": "clickElement", "selector": "//a[@id='plan_select']" },
+    { "method": "clickElement", "selector": "//button[text()='No']" },
+    { "method": "clickElement", "selector": "(//a[text()='OK'])[1]" },
+    {
+      "method": "clickElement",
+      "selector": "//input[@id='isSelected_RoadSideAssistance_TW']"
+    },
+    { "method": "clickElement", "selector": "//a[text()='Recalculate']" },
+    { "method": "clickElement", "selector": "//a[text()='Freeze Quote']" },
+    {
+      "method": "fillInput",
+      "selector": "//input[@id='firstName']",
+      "value": "QA",
+      "dynamicValue": true,
+      "field": "firstName"
+    },
+    {
+      "method": "fillInput",
+      "selector": "//input[@id='lastName']",
+      "value": "Test",
+      "dynamicValue": true,
+      "field": "lastName"
+    },
+    { "method": "clickElement", "selector": "//input[@id='printQuoteYes']" },
+    {
+      "method": "fillInput",
+      "selector": "//input[@id='whatsAppNumber']",
+      "value": "9597840039",
+      "dynamicValue": true,
+      "field": "mobileNumber"
+    },
+    { "method": "clickElement", "selector": "(//a[@id='policy_select'])[2]" },
+    { "method": "explicitWait", "ms": 6000 },
+    {
+      "method": "clickElement",
+      "selector": "//a[contains(text(), 'Policy Documents')]"
+    },
+    {
+      "method": "waitForApiCallAndBase64Response",
+      "selector": "(//a[contains(text(), 'Print Quote')])[2]",
+      "apiName": "/generatePrint"
+    },
+    { "method": "explicitWait", "ms": 3000 }
+  ]
+}

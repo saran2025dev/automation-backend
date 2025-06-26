@@ -1,0 +1,505 @@
+{
+  "id": "2",
+  "name": "chola",
+  "product": "Bike",
+  "steps": [
+    { "method": "gotoPage", "url": "https://epolicy.cholainsurance.com" },
+    {
+      "method": "fillInput",
+      "selector": "//input[@id='txtUserID']",
+      "value": "COVCOI90"
+    },
+    {
+      "method": "fillInput",
+      "selector": "//input[@id='txtpassword']",
+      "value": "Cover@1234"
+    },
+    { "method": "clickElement", "selector": "//span[text()='Login']" },
+    {
+      "method": "clickElementIFrame",
+      "selector": "//a[text()='Motor']",
+      "iframeSelector": "#frMain"
+    },
+    {
+      "method": "clickElementIFrame",
+      "selector": "//a[text()='Two Wheeler']",
+      "iframeSelector": "#frMain"
+    },
+
+    { "method": "simpleAlert" },
+
+    { "method": "explicitWait", "ms": 5000 },
+
+    {
+      "method": "selectDropdownIFrame",
+      "selector": "//select[@id='ddlCholaOffice']",
+      "value": "COIMBATORE - BRANCH",
+      "iframeSelector": "#frMain",
+      "dynamicValue": true,
+      "field": "cholaOffice"
+    },
+    {
+      "method": "selectDropdownIFrame",
+      "selector": "//select[@id='ddlTransactionType']",
+      "value": "Market Renewal",
+      "iframeSelector": "#frMain",
+      "dynamicValue": true,
+      "field": "transactionType"
+    },
+
+    { "method": "explicitWait", "ms": 2000 },
+
+    {
+      "method": "selectDropdownIFrame",
+      "selector": "//select[@id='ddlPolicyType']",
+      "value": "Non Funded",
+      "iframeSelector": "#frMain",
+      "dynamicValue": true,
+      "field": "policyType"
+    },
+    { "method": "explicitWait", "ms": 2000 },
+
+    {
+      "method": "radioAndCheckBoxIFrame",
+      "selector": "//input[@id='rdbIndTyp']",
+      "iframeSelector": "#frMain"
+    },
+    {
+      "method": "radioAndCheckBoxIFrame",
+      "selector": "//input[@id='rdbnewcustomer']",
+      "iframeSelector": "#frMain"
+    },
+    {
+      "method": "selectDropdownIFrame",
+      "selector": "//select[@id='ddlTitle']",
+      "value": "Ms",
+      "iframeSelector": "#frMain",
+      "dynamicValue": true,
+      "field": "title"
+    },
+    {
+      "method": "fillInputIframe",
+      "selector": "//input[@id='txtInsuredNm']",
+      "value": "Divya",
+      "iframeSelector": "#frMain",
+      "dynamicValue": true,
+      "field": "firstName"
+    },
+    {
+      "method": "fillInputIframe",
+      "selector": "//input[@id='txtEmailID']",
+      "value": "divyabharathi@yopmail.com",
+      "iframeSelector": "#frMain",
+      "dynamicValue": true,
+      "field": "email"
+    },
+    {
+      "method": "clickElementIFrame",
+      "selector": "//img[@id='imgAgr']",
+      "iframeSelector": "#frMain"
+    },
+
+    { "method": "explicitWait", "ms": 2000 },
+    {
+      "method": "fillInputIframe",
+      "selector": "#txtDOB",
+      "value": "04/03/1999",
+      "iframeSelector": "#frMain",
+      "dynamicValue": true,
+      "field": "dob"
+    },
+
+    { "method": "explicitWait", "ms": 2000 },
+
+    {
+      "method": "clickElementIFrame",
+      "selector": "//input[@id='txtPan']",
+      "iframeSelector": "#frMain"
+    },
+
+    { "method": "explicitWait", "ms": 2000 },
+
+    {
+      "method": "fillInputIframe",
+      "selector": "//input[@id='txtPan']",
+      "value": "ABCDE1234F",
+      "iframeSelector": "#frMain",
+      "dynamicValue": true,
+      "field": "panNumber"
+    },
+
+    { "method": "explicitWait", "ms": 3000 },
+    {
+      "method": "fillInputIframe",
+      "selector": "//input[@id='txtAddress']",
+      "value": "No 123 chennai",
+      "iframeSelector": "#frMain",
+      "dynamicValue": true,
+      "field": "address"
+    },
+    { "method": "explicitWait", "ms": 5000 },
+    {
+      "method": "fillInputIframe",
+      "selector": "//input[@id='txtPinCode']",
+      "value": "602105",
+      "iframeSelector": "#frMain",
+      "dynamicValue": true,
+      "field": "pincode"
+    },
+    { "method": "explicitWait", "ms": 5000 },
+    {
+      "method": "clickElementIFrame",
+      "selector": "//select[@id='ddlAreaPrem']",
+      "iframeSelector": "#frMain"
+    },
+    { "method": "explicitWait", "ms": 5000 },
+    {
+      "method": "selectDropdownIFrame",
+      "selector": "//select[@id='ddlAreaPrem']",
+      "value": "SRIPERUMBUDUR S.O",
+      "iframeSelector": "#frMain",
+      "dynamicValue": true,
+      "field": "area"
+    },
+
+    {
+      "method": "selectDropdownIFrame",
+      "selector": "//select[@id='ddlSegment']",
+      "value": "PL",
+      "iframeSelector": "#frMain",
+      "dynamicValue": true,
+      "field": "buisnessSegment"
+    },
+
+    { "method": "explicitWait", "ms": 5000 },
+
+    {
+      "method": "fillInputIframe",
+      "selector": "#txtPrevPolFromDt",
+      "value": "25/03/2024",
+      "iframeSelector": "#frMain",
+      "dynamicValue": true,
+      "field": "policyFromDate"
+    },
+
+    {
+      "method": "clickElementIFrame",
+      "selector": "//span[@id='Anthem_txtPrevPolToDt__']",
+      "iframeSelector": "#frMain"
+    },
+
+    { "method": "explicitWait", "ms": 3000 },
+
+    {
+      "method": "selectDropdownIFrame",
+      "selector": "//select[@id='ddlYear1']",
+      "value": "2018",
+      "iframeSelector": "#frMain",
+      "dynamicValue": true,
+      "field": "firstRegistrationYear"
+    },
+
+    { "method": "explicitWait", "ms": 3000 },
+
+    {
+      "method": "selectDropdownIFrame",
+      "selector": "//select[@id='ddlMonth']",
+      "value": "SEP",
+      "iframeSelector": "#frMain",
+      "dynamicValue": true,
+      "field": "firstRegistrationMonth"
+    },
+
+    { "method": "explicitWait", "ms": 3000 },
+
+    {
+      "method": "selectDropdownIFrame",
+      "selector": "//select[@id='ddlDate']",
+      "value": "20",
+      "iframeSelector": "#frMain",
+      "dynamicValue": true,
+      "field": "firstRegistrationDate"
+    },
+
+    { "method": "explicitWait", "ms": 3000 },
+
+    {
+      "method": "fillInputIframe",
+      "selector": "//input[@id='txtReg1']",
+      "value": "TN",
+      "iframeSelector": "#frMain",
+      "dynamicValue": true,
+      "field": "regNo1"
+    },
+    {
+      "method": "clickElementIFrame",
+      "selector": "//input[@id='txtReg2']",
+      "iframeSelector": "#frMain"
+    },
+    { "method": "explicitWait", "ms": 3000 },
+    {
+      "method": "fillInputIframe",
+      "selector": "//input[@id='txtReg2']",
+      "value": "37",
+      "iframeSelector": "#frMain",
+      "dynamicValue": true,
+      "field": "regNo2"
+    },
+    {
+      "method": "clickElementIFrame",
+      "selector": "//input[@id='txtReg3']",
+      "iframeSelector": "#frMain"
+    },
+    { "method": "explicitWait", "ms": 3000 },
+    {
+      "method": "fillInputIframe",
+      "selector": "//input[@id='txtReg3']",
+      "value": "AB",
+      "iframeSelector": "#frMain",
+      "dynamicValue": true,
+      "field": "regNo3"
+    },
+
+    { "method": "explicitWait", "ms": 3000 },
+
+    {
+      "method": "fillInputIframe",
+      "selector": "//input[@id='txtReg4']",
+      "value": "4567",
+      "iframeSelector": "#frMain",
+      "dynamicValue": true,
+      "field": "regNo4"
+    },
+
+    { "method": "explicitWait", "ms": 5000 },
+
+    {
+      "method": "clickElementIFrame",
+      "selector": "//select[@id='ddlManuYear']",
+      "iframeSelector": "#frMain"
+    },
+    {
+      "method": "selectDropdownIFrame",
+      "selector": "//select[@id='ddlManuYear']",
+      "value": "2018",
+      "iframeSelector": "#frMain",
+      "dynamicValue": true,
+      "field": "manufactureYear"
+    },
+
+    { "method": "explicitWait", "ms": 2000 },
+
+    {
+      "method": "clickElementIFrame",
+      "selector": "//span[@id='Anthem_ddlMake__']",
+      "iframeSelector": "#frMain"
+    },
+
+    { "method": "explicitWait", "ms": 2000 },
+
+    {
+      "method": "selectDropdownIFrame",
+      "selector": "//select[@id='ddlMake']",
+      "value": "HONDA",
+      "iframeSelector": "#frMain",
+      "dynamicValue": true,
+      "field": "make"
+    },
+    { "method": "explicitWait", "ms": 2000 },
+    {
+      "method": "clickElementIFrame",
+      "selector": "//select[@id='ddlModel']",
+      "iframeSelector": "#frMain"
+    },
+
+    { "method": "explicitWait", "ms": 2000 },
+    {
+      "method": "selectDropdownIFrame",
+      "selector": "//select[@id='ddlModel']",
+      "value": "ACTIVA 5G",
+      "iframeSelector": "#frMain",
+      "dynamicValue": true,
+      "field": "model"
+    },
+
+    { "method": "explicitWait", "ms": 2000 },
+    {
+      "method": "clickElementIFrame",
+      "selector": "//select[@id='ddlVariant']",
+      "iframeSelector": "#frMain"
+    },
+
+    { "method": "explicitWait", "ms": 2000 },
+    {
+      "method": "selectDropdownIFrame",
+      "selector": "//select[@id='ddlVariant']",
+      "value": "DELUXE",
+      "iframeSelector": "#frMain",
+      "dynamicValue": true,
+      "field": "variant"
+    },
+
+    { "method": "explicitWait", "ms": 2000 },
+    {
+      "method": "fillInputIframe",
+      "selector": "//input[@id='txtEngineNo']",
+      "value": "HND1234567890",
+      "iframeSelector": "#frMain",
+      "dynamicValue": true,
+      "field": "engineNo"
+    },
+
+    { "method": "explicitWait", "ms": 2000 },
+    {
+      "method": "fillInputIframe",
+      "selector": "//input[@id='txtChassisNo']",
+      "value": "MHL7894561230",
+      "iframeSelector": "#frMain",
+      "dynamicValue": true,
+      "field": "chassisNo"
+    },
+
+    {
+      "method": "selectDropdownIFrame",
+      "selector": "//select[@id='ddlOptAddr']",
+      "value": "No",
+      "iframeSelector": "#frMain"
+    },
+
+    { "method": "explicitWait", "ms": 5000 },
+
+    {
+      "method": "scrollIntoViewIFrame",
+      "selector": "#Anthem_btnCalculate__",
+      "iframeSelector": "#frMain"
+    },
+
+    {
+      "method": "clickElementIFrame",
+      "selector": "#Anthem_btnCalculate__",
+      "iframeSelector": "#frMain"
+    },
+
+    { "method": "explicitWait", "ms": 30000 },
+
+    {
+      "method": "fillInputIframe",
+      "selector": "//input[@id='txtBranchname']",
+      "value": "COIMBATORE",
+      "iframeSelector": "#frMain",
+      "dynamicValue": true,
+      "field": "branchName"
+    },
+
+    {
+      "method": "clickElementIFrame",
+      "selector": "//a[@id='lnkAddDtls']",
+      "iframeSelector": "#frMain"
+    },
+
+    { "method": "explicitWait", "ms": 2000 },
+
+    {
+      "method": "clickElementIFrame",
+      "selector": "//select[@id='ddlPrevInNm']",
+      "iframeSelector": "#frMain"
+    },
+    { "method": "explicitWait", "ms": 2000 },
+
+    {
+      "method": "selectDropdownIFrame",
+      "selector": "//select[@id='ddlPrevInNm']",
+      "value": "BAJAJ ALIANZ",
+      "iframeSelector": "#frMain",
+      "dynamicValue": true,
+      "field": "previousInsurerName"
+    },
+
+    { "method": "explicitWait", "ms": 1000 },
+
+    {
+      "method": "clickElementIFrame",
+      "selector": "//input[@id='txtPrevplyNum']",
+      "iframeSelector": "#frMain"
+    },
+
+    {
+      "method": "fillInputIframe",
+      "selector": "//input[@id='txtPrevplyNum']",
+      "value": "PBA123456789",
+      "iframeSelector": "#frMain",
+      "dynamicValue": true,
+      "field": "branchName"
+    },
+
+    { "method": "explicitWait", "ms": 3000 },
+
+    {
+      "method": "radioAndCheckBoxIFrame",
+      "selector": "//input[@id='chkPropMar']",
+      "iframeSelector": "#frMain"
+    },
+    { "method": "explicitWait", "ms": 1000 },
+    {
+      "method": "radioAndCheckBoxIFrame",
+      "selector": "//input[@id='chkPUCCertificateMar']",
+      "iframeSelector": "#frMain"
+    },
+    { "method": "explicitWait", "ms": 1000 },
+    {
+      "method": "radioAndCheckBoxIFrame",
+      "selector": "//input[@id='chkPrevMar']",
+      "iframeSelector": "#frMain"
+    },
+    { "method": "explicitWait", "ms": 1000 },
+    {
+      "method": "radioAndCheckBoxIFrame",
+      "selector": "//input[@id='chkPAOwnerWaiverMar']",
+      "iframeSelector": "#frMain"
+    },
+
+    { "method": "explicitWait", "ms": 3000 },
+
+    {
+      "method": "clickElementIFrame",
+      "selector": "//a[text()='Save']",
+      "iframeSelector": "#frMain"
+    },
+
+    { "method": "explicitWait", "ms": 5000 },
+
+    {
+      "method": "scrollIntoViewIFrame",
+      "selector": "#Anthem_btnCalculate__",
+      "iframeSelector": "#frMain"
+    },
+
+    {
+      "method": "clickElementIFrame",
+      "selector": "#Anthem_btnCalculate__",
+      "iframeSelector": "#frMain"
+    },
+
+    { "method": "explicitWait", "ms": 30000 },
+
+    {
+      "method": "clickElementIFrame",
+      "selector": "//a[text()='Save']",
+      "iframeSelector": "#frMain"
+    },
+
+    {
+      "method": "clickElementIFrame",
+      "selector": "//a[text()='Print Proposal']",
+      "iframeSelector": "#frMain"
+    },
+
+    {
+      "method": "downloadPDFUsingURL",
+      "selector": "#hdnProposalNo",
+      "iframeSelector": "#frMain"
+    },
+
+    { "method": "explicitWait", "ms": 5000 }
+  ]
+}

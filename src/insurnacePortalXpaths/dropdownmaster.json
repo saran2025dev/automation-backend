@@ -1,0 +1,19 @@
+{
+  "id": 1,
+  "filedName": "date",
+  "keys": ["JAN", "FEB", "MAR", "APR"],
+  "value": {
+    "CHOLA": {
+      "JAN": "JAN",
+      "FEB": "FEB",
+      "MAR": "MAR",
+      "APR": "APR"
+    },
+    "ROYAL": {
+      "JAN": "Jan",
+      "FEB": "Feb",
+      "MAR": "Mar",
+      "APR": "Apr"
+    }
+  }
+}

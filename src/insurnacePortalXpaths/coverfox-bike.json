@@ -1,0 +1,156 @@
+{
+  "id": "2",
+  "name": "Coverfox",
+  "product": "bike",
+  "steps": [
+    //launch
+
+    { "method": "gotoPage", "url": "https://www.coverfox.com/" },
+
+    //register number
+
+    { "method": "explicitWait", "ms": 1000 },
+
+    {
+      "method": "clickElement",
+      "selector": "//li[text()='Bike']"
+    },
+
+    { "method": "explicitWait", "ms": 1000 },
+
+    {
+      "method": "fillInput",
+      "selector": "//label[text()='Enter your bike number (MH02BX0377)']",
+      "value": "TN55BC5664",
+      "dynamicValue": true,
+      "field": "regno"
+    },
+
+    // Not sure of your bike number?
+
+    { "method": "explicitWait", "ms": 1000 },
+
+    {
+      "method": "clickElement",
+      "selector": "//button[text()='Not sure of your bike number?']"
+    },
+
+    { "method": "explicitWait", "ms": 1000 },
+
+    // Which bike do you ride?
+
+    {
+      "method": "clickElement",
+      "selector": "//div[text()='Which bike do you ride?']"
+    },
+
+    { "method": "explicitWait", "ms": 1000 },
+
+    // bike manufacturer
+
+    {
+      "method": "clickElement",
+      "selector": "//div[text()='Search for your bike']"
+    },
+
+    { "method": "explicitWait", "ms": 1000 },
+
+    {
+      "method": "fillInput",
+      "selector": "//input[@id='SearchBox']",
+      "value": "Tvs",
+      "dynamicValue": true,
+      "field": "bikemanufacturer"
+    },
+
+    { "method": "explicitWait", "ms": 1000 },
+
+    { "method": "keyboardPressENTER" },
+
+    { "method": "explicitWait", "ms": 1000 },
+
+    // Bike Model & Variant
+
+    {
+      "method": "clickElement",
+      "selector": "//div[@class='w--multi_select_handle ']"
+    },
+
+    { "method": "explicitWait", "ms": 1000 },
+
+    {
+      "method": "fillInput",
+      "selector": "//input[@id='SearchBox']",
+      "value": "star city self start (110 CC)",
+      "dynamicValue": true,
+      "field": "model&variant"
+    },
+
+    { "method": "explicitWait", "ms": 1000 },
+
+    { "method": "keyboardPressENTER" },
+
+    { "method": "explicitWait", "ms": 1000 },
+
+    // Bike Registration Year
+
+    {
+      "method": "clickElement",
+      "selector": "//span[text()='2018']"
+    },
+
+    { "method": "explicitWait", "ms": 1000 },
+
+    // Bike Registration RTO
+
+    {
+      "method": "clickElement",
+      "selector": "//div[text()='Bike registration RTO']"
+    },
+
+    { "method": "explicitWait", "ms": 1000 },
+
+    {
+      "method": "clickElement",
+      "selector": "//div[@class='w--multi_select_handle ']"
+    },
+
+    { "method": "explicitWait", "ms": 1000 },
+
+    {
+      "method": "fillInput",
+      "selector": "//input[@id='SearchBox']",
+      "value": "pudukottai",
+      "dynamicValue": true,
+      "field": "registration_rto"
+    },
+    { "method": "explicitWait", "ms": 1000 },
+
+    { "method": "keyboardPressENTER" },
+
+    { "method": "explicitWait", "ms": 1000 },
+
+    // Previous Policy Expire details
+
+    {
+      "method": "clickElement",
+      "selector": "//div[text()='Previous policy expired?']"
+    },
+
+    { "method": "explicitWait", "ms": 1000 },
+
+    {
+      "method": "clickElement",
+      "selector": "//div[text()='Not expired']"
+    },
+
+    { "method": "explicitWait", "ms": 1000 },
+
+    // View Quote
+
+    {
+      "method": "clickElement",
+      "selector": "//button[text()='View Quotes']"
+    }
+  ]
+}

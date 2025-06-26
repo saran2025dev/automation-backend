@@ -1,0 +1,185 @@
+{
+  "id": 2,
+  "name": "Chola",
+  "product": "Car",
+  "steps": [
+
+  { "method": "gotoPage",
+    "url": "https://neoepolicy.cholainsurance.com/epolicy/login" },
+
+  { "method": "fillInput",
+    "selector": "#mat-input-0",
+    "value": "COVCOI90" },
+
+  { "method": "fillInput",
+    "selector": "#mat-input-1",
+    "value": "Cover@1234" },
+
+  { "method": "clickElement",
+    "selector": "//button[contains(text(),'Submit')]" },
+
+  { "method": "clickElement",
+    "selector": "//img[@class='imgSideIcon']" },
+
+  { "method": "clickElement",
+    "selector": "//span[contains(text(),'Private Car - 3301')]" },
+
+  { "method": "clickElement",
+    "selector": "//div[contains(text(),'Private Car - 3362')]" },
+
+  { "method": "fillInput",
+    "selector": "//input[@id='mat-input-2']",
+    "value": "TN-01-AB-2234",
+    "dynamicValue":true,  
+    "field":"regNo"
+  },
+ 
+  { "method": "explicitWait", "ms": 3000 },
+
+  { "method": "keyboardPressTAB"},
+
+  { "method": "explicitWait", "ms": 3000 },
+
+  { "method": "clickElement",
+    "selector": "//a[@class='btninfo']" },
+
+  { "method": "clickElement",
+    "selector": "//mat-checkbox[@formcontrolname='isNoPreviousPolicyChecked']" },
+
+  { "method": "clickElement",
+    "selector": "//input[@formcontrolname='CustomerType']" },
+
+  { "method": "clickElement",
+    "selector": "//span[text()=' Individual ']",
+    "dynamicValue":true,
+    "field":"customerType"
+  },
+
+  { "method": "fillInput",
+    "selector": "//input[@data-placeholder='Enter Customer Name']",
+    "value": "Divya",
+    "dynamicValue":true,
+    "field":"customerName"  
+  },
+ 
+  { "method": "fillInput",
+    "selector": "//input[@data-placeholder='Enter Customer Pincode']",
+    "value": "602105" ,
+    "dynamicValue":true,
+    "field":"pincode"
+  },
+
+  { "method": "explicitWait", "ms": 3000 },
+
+  { "method": "clickElement",
+    "selector": "//input[@id='dateRSD']" },
+
+  { "method": "explicitWait", "ms": 3000 },
+
+  { "method": "clickElement",
+    "selector": "//button[@class='mat-focus-indicator mat-calendar-period-button mat-button mat-button-base']" },
+
+  { "method": "clickElement",
+    "selector": "//div[text()=' 2025 ']",
+    "dynamicValue":true,
+    "field": "datersd_Year"  },
+
+  { "method": "clickElement",
+    "selector": "//div[text()=' JUL ']" ,
+    "dynamicValue":true,
+    "field": "datersd_month"
+  },
+
+  { "method": "clickElement",
+    "selector": "//div[text()=' 22 ']",
+    "dynamicValue":true,
+    "field": "datersd_date"  
+  }
+  ,
+  { "method": "clickElement",
+    "selector": "//button[text()='Continue']" },
+
+  { "method": "clickElement",
+    "selector": "//input[@formcontrolname='TypeName']" },
+
+  { "method": "clickElement",
+    "selector": "//span[text()=' PRIVATE CAR – NON ELECTRIC VEHICLES ']",
+    "dynamicValue":true,
+    "field": "carType"  },
+
+  { "method": "clickElement",
+    "selector": "//input[@formcontrolname='MakeName']",
+    "dynamicValue":true
+  },
+
+  { "method": "clickElement",
+    "selector": "//span[text()=' TATA MOTORS ']",
+    "dynamicValue":true,
+    "field": "make"  
+  },
+
+  { "method": "clickElement",
+    "selector": "//input[@formcontrolname='ModelName']" },
+
+  { "method": "clickElement",
+    "selector": "//span[text()=' BOLT ']",
+    "dynamicValue":true,
+    "field": "model"  },
+
+  { "method": "clickElement",
+    "selector": "//input[@formcontrolname='VariantWithGVW']" },
+
+  { "method": "clickElement",
+    "selector": "//span[text()=' QUADRAJET XE - BUILT IN LPG KIT ']",
+    "dynamicValue":true,
+    "field": "variant"
+  },
+ 
+  { "method": "clickElement",
+    "selector": "//button[text()='Continue']" },
+
+  { "method": "clickElement",
+    "selector": "//button[@class='mat-focus-indicator mat-icon-button mat-button-base']"},
+
+  { "method": "clickElement",
+    "selector": "//button[@class='mat-focus-indicator mat-calendar-period-button mat-button mat-button-base']" },
+
+  { "method": "clickElement",
+    "selector": "//div[text()=' 2025 ']",
+    "dynamicValue":true,
+    "field": "registerationYear"  },
+
+  { "method": "clickElement",
+    "selector": "//div[text()=' FEB ']",
+    "dynamicValue":true,
+    "field": "registerationMonth"},
+
+  { "method": "clickElement",
+    "selector": "//div[text()=' 28 ']",
+    "dynamicValue":true,
+    "field": "registerationDate"  },
+
+  { "method": "clickElement",
+    "selector": "//input[@formcontrolname='ManufacturerYear']" },
+
+  { "method": "clickElement",
+    "selector": "(//span[@class='mat-option-text'])[1]" },
+
+  { "method": "clickElement",
+    "selector": "//button[text()='Continue']" },
+
+  { "method": "clickElement",
+    "selector": "//button[text()='Continue']" },
+
+  { "method": "explicitWait", "ms": 10000 },
+
+  { "method": "clickElement",
+    "selector": "//button[text()='SAVE PREMIUM']" },
+
+  { "method": "explicitWait", "ms": 3000 },
+
+  { "method": "clickElement",
+    "selector": "//button[text()='Download']" },
+
+  { "method": "explicitWait", "ms": 3000 }
+  ]}
