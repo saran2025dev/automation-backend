@@ -1,12 +1,14 @@
 // src/users/entities/user.entity.ts
 import { Exclude } from 'class-transformer';
+import { Role } from 'src/role/entity/role.entity';
 import {
-    Column,
-    CreateDateColumn,
-    Entity,
-    Index,
-    PrimaryGeneratedColumn,
-    UpdateDateColumn
+  Column,
+  CreateDateColumn,
+  Entity,
+  Index,
+  ManyToOne,
+  PrimaryGeneratedColumn,
+  UpdateDateColumn
 } from 'typeorm';
 
 @Entity('users')
@@ -23,7 +25,7 @@ export class User {
   username: string;
 
   @Column()
-  @Exclude() // Exclude from serialization
+  @Exclude()
   password: string;
 
   @CreateDateColumn({ name: 'created_at' })
@@ -31,5 +33,9 @@ export class User {
 
   @UpdateDateColumn({ name: 'updated_at' })
   updatedAt: Date;
+
+  @ManyToOne(() => Role, role => role.users, { eager: true, nullable: false })
+  role: Role;
+
 
 }

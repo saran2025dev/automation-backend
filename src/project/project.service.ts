@@ -4,38 +4,102 @@ import { Repository } from 'typeorm';
 import { CreateProjectDto } from './dto/create-project.dto';
 import { UpdateProjectDto } from './dto/update-project.dto';
 import { Project } from './entities/project.entity';
+import { ProjectRecordService } from 'src/project-record/project-record.service';
+import { ProjectRecordOutputService } from 'src/project-record-output/project-record-output.service';
+import { UserProjectsService } from 'src/user-projects/user-projects.service';
+import { User } from 'src/user/entities/user.entity';
 
 @Injectable()
 export class ProjectService {
   constructor(
     @InjectRepository(Project)
     private readonly projectRepository: Repository<Project>,
-  ) {}
+    private readonly projectRecordService: ProjectRecordService,
+    private readonly projectRecordOutputService: ProjectRecordOutputService,
+    private readonly userProjectsService: UserProjectsService,
+    @InjectRepository(User)
+    private readonly userRepo: Repository<User>,) { }
 
-  async create(createProjectDto: CreateProjectDto) {
-    const project = this.projectRepository.create({ ...createProjectDto });
-    return await this.projectRepository.save(project);
+  async create(createProjectDto: CreateProjectDto, creatorId: string) {
+    const creator = await this.userRepo.findOne({
+      where: { id: creatorId },
+      relations: ['role'],
+    });
+
+    if (!creator) {
+      throw new Error('Creator not found');
+    }
+
+    if (creator.role.name !== 'Admin') {
+      throw new Error('Only Admin can create a project');
+    }
+
+    const count = await this.projectRepository.count();
+    const nextId = `PRJ-${String(count + 1).padStart(3, '0')}`;
+
+    const project = this.projectRepository.create({
+      ...createProjectDto,
+      uniqueProjectId: nextId,
+      createdBy: creator,
+    });
+
+    const savedProject = await this.projectRepository.save(project);
+
+    await this.projectRecordService.create({
+      projectId: savedProject.id,
+      createdBy: creator.id,
+      testSuite: undefined,
+      priority: 'Medium',
+      data: '{}',
+    });
+
+    await this.projectRecordOutputService.create({
+      projectId: savedProject.id,
+      output: '{}',
+    });
+
+    return savedProject;
   }
 
+
   async findAll() {
-    return await this.projectRepository.find({relations:['suite']});
+    return await this.projectRepository.find({ relations: ['suite'] });
   }
 
   async findOne(id: string) {
     return await this.projectRepository.findOne({ where: { id: id } });
   }
-
   async update(id: string, updateProjectDto: UpdateProjectDto) {
     const project = await this.findOne(id);
 
-    const updated = {...project,...updateProjectDto}
+    if (!project) throw new Error(`Project with id ${id} not found`);
 
-    console.log("after updated")
-    console.log(updated)
+    const updated = {
+      ...project,
+      ...updateProjectDto,
+      createdBy: updateProjectDto.createdBy
+        ? { id: updateProjectDto.createdBy }
+        : project.createdBy,
+    };
+
     return this.projectRepository.save(updated);
   }
 
   async remove(id: string) {
-    return this.projectRepository.softDelete(id);
+    const result = await this.projectRepository.delete(id);
+
+    if (result.affected === 0) {
+      return { message: `Project with id ${id} not found` };
+    }
+
+    return { message: `Project with id ${id} deleted successfully (hard delete)` };
+  }
+
+  async assignUsers(projectId: string, userIds: string[]) {
+    const promises = userIds.map((userId) =>
+      this.userProjectsService.create({ userId, projectId }),
+    );
+    await Promise.all(promises);
+    return { message: 'Users assigned successfully' };
   }
 }

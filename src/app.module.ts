@@ -8,6 +8,12 @@ import { SuiteMapModule } from './suite-map/suite-map.module';
 import { SuiteModule } from './suite/suite.module';
 import { TestcaseModule } from './testcase/testcase.module';
 import { UserModule } from './user/user.module';
+import { UserProjectsModule } from './user-projects/user-projects.module';
+import { ModulesModule } from './modules/modules.module';
+import { TestSuitesModule } from './test-suites/test-suites.module';
+import { ProjectRecordModule } from './project-record/project-record.module';
+import { ProjectRecordOutputModule } from './project-record-output/project-record-output.module';
+import { RoleModule } from './role/role.module';
 
 @Module({
   imports: [
@@ -17,6 +23,12 @@ import { UserModule } from './user/user.module';
     ProjectModule,
     SuiteModule,
     SuiteMapModule,
+    UserProjectsModule,
+    ModulesModule,
+    TestSuitesModule,
+    ProjectRecordModule,
+    ProjectRecordOutputModule,
+    RoleModule
   ],
   controllers: [AppController],
   providers: [AppService],

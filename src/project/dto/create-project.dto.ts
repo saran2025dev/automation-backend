@@ -1,5 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { IsBoolean, IsNotEmpty, IsOptional, IsString } from 'class-validator';
+import { IsBoolean, IsNotEmpty, IsOptional, IsString, IsUUID } from 'class-validator';
 
 export class CreateProjectDto {
   @ApiProperty({
@@ -28,4 +28,12 @@ export class CreateProjectDto {
   @IsOptional()
   @IsBoolean()
   isActive?: boolean;
+
+  @ApiProperty({
+    example: '3f72b144-f36b-4326-8a89-ce8e6f77ff37',
+    description: 'ID of the user who created this project',
+  })
+  @IsNotEmpty()
+  @IsUUID()
+  createdBy: string;
 }

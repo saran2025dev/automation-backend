@@ -10,7 +10,7 @@ export class SuiteService {
   constructor(
     @InjectRepository(Suite)
     private readonly suiteRepository: Repository<Suite>,
-  ) {}
+  ) { }
 
   async create(createSuiteDto: CreateSuiteDto) {
     const created = this.suiteRepository.create({
@@ -21,16 +21,27 @@ export class SuiteService {
   }
 
   async findAll() {
-    return await this.suiteRepository.find();
+    return await this.suiteRepository.find({
+      relations: { project: true }
+    });
   }
 
   async findOne(id: string) {
-    return await this.suiteRepository.findOne({ where: { id: id } });
+    return await this.suiteRepository.findOne({
+      where: { id: id },
+      relations: { project: true },
+    });
+  }
+  async findByProjectId(projectId: string) {
+    return this.suiteRepository.find({
+      where: { project: { id: projectId } },
+      relations: { project: true }
+    });
   }
 
   async update(id: string, updateSuiteDto: UpdateSuiteDto) {
     const suite = await this.findOne(id);
-    const updated = this.suiteRepository.create({...suite,...updateSuiteDto});
+    const updated = this.suiteRepository.create({ ...suite, ...updateSuiteDto });
     return this.suiteRepository.save(updated)
   }
 

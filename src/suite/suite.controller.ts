@@ -5,7 +5,7 @@ import { SuiteService } from './suite.service';
 
 @Controller('suite')
 export class SuiteController {
-  constructor(private readonly suiteService: SuiteService) {}
+  constructor(private readonly suiteService: SuiteService) { }
 
   @Post()
   create(@Body() createSuiteDto: CreateSuiteDto) {
@@ -26,6 +26,13 @@ export class SuiteController {
   update(@Param('id') id: string, @Body() updateSuiteDto: UpdateSuiteDto) {
     return this.suiteService.update(id, updateSuiteDto);
   }
+
+  @Get('project/:projectId')
+  findByProjectId(@Param('projectId') projectId: string) {
+    return this.suiteService.findByProjectId(projectId);
+  }
+
+
 
   @Delete(':id')
   remove(@Param('id') id: string) {
