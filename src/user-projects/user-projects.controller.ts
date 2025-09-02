@@ -21,6 +21,8 @@ export class UserProjectsController {
     return this.service.findOne(id);
   }
 
+
+
   @Patch(':id')
   update(@Param('id') id: string, @Body() dto: UpdateUserProjectDto) {
     return this.service.update(id, dto);

@@ -1,8 +1,10 @@
 import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
 import { ProjectRecordService } from './project-record.service';
 import { CreateProjectRecordDto, UpdateProjectRecordDto } from './dto/create-project-record.dto';
+import { ApiTags } from '@nestjs/swagger';
 
-@Controller('project-record')
+@ApiTags('project-records')
+@Controller('project-records')
 export class ProjectRecordController {
   constructor(private readonly projectRecordService: ProjectRecordService) {}
 
@@ -19,6 +21,11 @@ export class ProjectRecordController {
   @Get(':id')
   findOne(@Param('id') id: string) {
     return this.projectRecordService.findOne(id);
+  }
+
+   @Get('suite/:suiteId')
+  findBySuiteId(@Param('suiteId') suiteId: string) {
+    return this.projectRecordService.findBySuiteId(suiteId);
   }
 
   @Patch(':id')

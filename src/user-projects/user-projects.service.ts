@@ -24,6 +24,13 @@ findAll() {
   return this.repo.find({ relations: ['user', 'project'] });
 }
 
+async findByUserId(userId: string) {
+  return this.repo.find({
+    where: { user: { id: userId } },
+    relations: ['user', 'project'], // include relations so you get full project/user details
+  });
+}
+
 findOne(id: string) {
   return this.repo.findOne({ where: { id }, relations: ['user', 'project'] });
 }

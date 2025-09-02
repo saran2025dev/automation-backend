@@ -2,7 +2,9 @@ import { Body, Controller, Delete, Get, Param, Patch, Post, Req } from '@nestjs/
 import { CreateProjectDto } from './dto/create-project.dto';
 import { UpdateProjectDto } from './dto/update-project.dto';
 import { ProjectService } from './project.service';
+import { ApiTags } from '@nestjs/swagger';
 
+@ApiTags('project')
 @Controller('project')
 export class ProjectController {
   constructor(private readonly projectService: ProjectService) { }
@@ -12,6 +14,19 @@ create(@Body() createProjectDto: CreateProjectDto, @Req() req) {
   const creatorId = req.user?.id 
   return this.projectService.create(createProjectDto, creatorId);
 }
+
+  @Post(':projectId/assign')
+  async assignUsers(
+    @Param('projectId') projectId: string,
+    @Body('userIds') userIds: string[],
+  ) {
+    return this.projectService.assignUsers(projectId, userIds);
+  }
+
+    @Get('project/:userId')
+  async findProjectsByUser(@Param('userId') userId: string) {
+    return this.projectService.findProjectsByUser(userId);
+  }
 
 
   @Get()

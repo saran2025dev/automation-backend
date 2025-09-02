@@ -7,9 +7,9 @@ import {
   UpdateDateColumn,
   DeleteDateColumn,
 } from 'typeorm';
-import { TestSuite } from 'src/test-suites/entities/test-suite.entity';
 import { User } from 'src/user/entities/user.entity';
 import { Project } from 'src/project/entities/project.entity';
+import { Suite } from 'src/suite/entities/suite.entity';
 
 @Entity('project_record')
 export class ProjectRecord {
@@ -22,8 +22,8 @@ export class ProjectRecord {
   @ManyToOne(() => User, { eager: true })
   createdBy: User;
 
-  @ManyToOne(() => TestSuite, { eager: true, nullable: true })
-  testSuite: TestSuite;
+  @ManyToOne(() => Suite, { eager: true, nullable: true })
+  testSuite: Suite;
 
   @Column({ nullable: true })
   priority: string;

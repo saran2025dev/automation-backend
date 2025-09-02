@@ -1,6 +1,5 @@
 import { Injectable } from '@nestjs/common';
 import { chromium } from 'playwright';
-import { Testcase } from './testcase/entities/testcase.entity';
 import PlaywrightUtils from './utils/PlaywrightUtils';
 
 @Injectable()
@@ -12,7 +11,7 @@ export class AppService {
     const context = await browser.newContext();
     const page = await context.newPage();
 
-    const chola_Bike:Testcase = {
+    const chola_Bike = {
 
       "id": "2",
       "name": "Coverfox",

@@ -1,8 +1,9 @@
 import { Controller, Get, Post, Patch, Delete, Param, Body } from '@nestjs/common';
 import { ProjectRecordOutputService } from './project-record-output.service';
 import { CreateProjectRecordOutputDto, UpdateProjectRecordOutputDto } from './dto/create-project-record-output.dto';
-
-@Controller('project-record-output')
+import { ApiTags } from '@nestjs/swagger';
+@ApiTags('project-records-output')
+@Controller('project-records-output')
 export class ProjectRecordOutputController {
   constructor(private readonly service: ProjectRecordOutputService) {}
 

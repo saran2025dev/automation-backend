@@ -10,6 +10,8 @@ interface Step {
   path?: string;
   text?: string;
   iframeSelector?: string;
+  skip?: boolean;
+  product?: string;
 }
 
 interface TempFile {

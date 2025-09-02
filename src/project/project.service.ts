@@ -102,4 +102,8 @@ export class ProjectService {
     await Promise.all(promises);
     return { message: 'Users assigned successfully' };
   }
+
+  async findProjectsByUser(userId: string) {
+  return this.userProjectsService.findByUserId(userId);
+}
 }

@@ -1,5 +1,4 @@
 import { Page } from 'playwright';
-import { Testcase } from 'src/testcase/entities/testcase.entity';
 
 class PlaywrightUtils {
   constructor() {}
@@ -212,7 +211,7 @@ class PlaywrightUtils {
 
   async performActions(
     page: Page,
-    actions: Testcase,
+    actions: { id: string; name: string; product: string; steps: any[] },
   ) {
     for (const action of actions.steps) {
       try {
