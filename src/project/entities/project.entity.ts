@@ -29,7 +29,7 @@ export class Project {
 
   @OneToMany(() => Suite, (suiteTestCase) => suiteTestCase.project)
   suite: Suite[];
-
+  
 
   @Column({ default: true })
   isActive: boolean;

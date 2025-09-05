@@ -9,29 +9,34 @@ import { ApiTags } from '@nestjs/swagger';
 export class ProjectController {
   constructor(private readonly projectService: ProjectService) { }
 
-@Post()
-create(@Body() createProjectDto: CreateProjectDto, @Req() req) {
-  const creatorId = req.user?.id 
-  return this.projectService.create(createProjectDto, creatorId);
-}
+  @Post()
+  create(@Body() createProjectDto: CreateProjectDto, @Req() req) {
+    const creatorId = req.user?.id
+    return this.projectService.create(createProjectDto, creatorId);
+  }
 
   @Post(':projectId/assign')
   async assignUsers(
     @Param('projectId') projectId: string,
-    @Body('userIds') userIds: string[],
+    @Body() userIds: string[],
   ) {
     return this.projectService.assignUsers(projectId, userIds);
   }
 
-    @Get('project/:userId')
+  @Get('project/:userId')
   async findProjectsByUser(@Param('userId') userId: string) {
     return this.projectService.findProjectsByUser(userId);
   }
 
 
-  @Get()
-  findAll() {
-    return this.projectService.findAll();
+  @Get(':userId/role/:role')
+  async findByUser(
+    @Param('userId') userId: string,
+    @Param('role') role: string) {
+
+    const isAdmin = role?.toLowerCase() === 'admin';
+
+    return this.projectService.findAll(userId,isAdmin);
   }
 
   @Get(':id')

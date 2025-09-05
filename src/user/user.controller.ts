@@ -1,16 +1,21 @@
 // user.controller.ts
-import { Controller, Post, Body } from '@nestjs/common';
+import { Controller, Post, Body, Get } from '@nestjs/common';
 import { UserService } from './user.service';
 import { CreateUserDto } from './dto/create-user.dto';
 import { LoginUserDto } from './dto/login-user.dto';
 
 @Controller('user')
 export class UserController {
-  constructor(private readonly userService: UserService) {}
+  constructor(private readonly userService: UserService) { }
 
   @Post('signup')
   signup(@Body() createUserDto: CreateUserDto) {
     return this.userService.signup(createUserDto);
+  }
+  
+  @Get()
+  async findAllNonAdminUsers() {
+    return this.userService.findAllNonAdmin();
   }
 
   @Post('login')

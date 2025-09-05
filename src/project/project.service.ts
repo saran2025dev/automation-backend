@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Repository } from 'typeorm';
+import { In, Repository } from 'typeorm';
 import { CreateProjectDto } from './dto/create-project.dto';
 import { UpdateProjectDto } from './dto/update-project.dto';
 import { Project } from './entities/project.entity';
@@ -62,8 +62,29 @@ export class ProjectService {
   }
 
 
-  async findAll() {
-    return await this.projectRepository.find({ relations: ['suite'] });
+  async findAll(userId?: string, isAdmin?: boolean) {
+    if (isAdmin) {
+      return await this.projectRepository.find({ relations: ['suite'] });
+    }
+
+    if (!userId) {
+      return [];
+    }
+
+    const userProjectRecords = await this.userProjectsService.findByUserId(userId);
+
+    if (!userProjectRecords || userProjectRecords.length === 0) {
+      return [];
+    }
+
+    const projectIds = Array.from(new Set(userProjectRecords.map((r) => r.project.id)));
+
+    const projects = await this.projectRepository.find({
+      where: { id: In(projectIds) },
+      relations: ['suite'],
+    });
+
+    return projects;
   }
 
   async findOne(id: string) {

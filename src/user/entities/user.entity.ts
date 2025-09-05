@@ -34,7 +34,7 @@ export class User {
   @UpdateDateColumn({ name: 'updated_at' })
   updatedAt: Date;
 
-  @ManyToOne(() => Role, role => role.users, { eager: true, nullable: false })
+  @ManyToOne(() => Role, role => role.users, { eager: true, nullable: true })
   role: Role;
 
 
