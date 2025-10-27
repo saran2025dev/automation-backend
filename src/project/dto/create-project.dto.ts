@@ -37,3 +37,13 @@ export class CreateProjectDto {
   @IsUUID()
   createdBy: string;
 }
+
+export class AssignUsersDto {
+  @ApiProperty({
+    type: [String],
+    example: ['c3cdd408-0401-43f8-8ad3-aab16e351e7c'],
+    description: 'Array of user ids to assign to the project',
+  })
+  @IsString({ each: true })
+  userIds: string[];
+}

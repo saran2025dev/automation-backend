@@ -30,7 +30,6 @@ export class Project {
   @OneToMany(() => Suite, (suiteTestCase) => suiteTestCase.project)
   suite: Suite[];
   
-
   @Column({ default: true })
   isActive: boolean;
 
@@ -47,3 +46,4 @@ export class Project {
   @DeleteDateColumn({ nullable: true })
   deleteddAt: Date;
 }
+

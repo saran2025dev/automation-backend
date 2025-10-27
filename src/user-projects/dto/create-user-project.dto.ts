@@ -6,6 +6,7 @@ export class CreateUserProjectDto {
 
   @ApiProperty()
   projectId: string;
+
 }
 
-export class UpdateUserProjectDto extends PartialType(CreateUserProjectDto) {}
+export class UpdateUserProjectDto extends PartialType(CreateUserProjectDto) { }

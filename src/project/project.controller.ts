@@ -1,5 +1,5 @@
 import { Body, Controller, Delete, Get, Param, Patch, Post, Req } from '@nestjs/common';
-import { CreateProjectDto } from './dto/create-project.dto';
+import { AssignUsersDto, CreateProjectDto } from './dto/create-project.dto';
 import { UpdateProjectDto } from './dto/update-project.dto';
 import { ProjectService } from './project.service';
 import { ApiTags } from '@nestjs/swagger';
@@ -18,9 +18,9 @@ export class ProjectController {
   @Post(':projectId/assign')
   async assignUsers(
     @Param('projectId') projectId: string,
-    @Body() userIds: string[],
+    @Body() body: AssignUsersDto,
   ) {
-    return this.projectService.assignUsers(projectId, userIds);
+    return this.projectService.assignUsers(projectId, body.userIds);
   }
 
   @Get('project/:userId')
@@ -36,7 +36,7 @@ export class ProjectController {
 
     const isAdmin = role?.toLowerCase() === 'admin';
 
-    return this.projectService.findAll(userId,isAdmin);
+    return this.projectService.findAll(userId, isAdmin);
   }
 
   @Get(':id')

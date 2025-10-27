@@ -120,11 +120,12 @@ export class ProjectService {
     const promises = userIds.map((userId) =>
       this.userProjectsService.create({ userId, projectId }),
     );
+
     await Promise.all(promises);
     return { message: 'Users assigned successfully' };
   }
 
   async findProjectsByUser(userId: string) {
-  return this.userProjectsService.findByUserId(userId);
-}
+    return this.userProjectsService.findByUserId(userId);
+  }
 }
