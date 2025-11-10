@@ -14,7 +14,7 @@ export class CreateUserDto {
         example: 'John Deere',
         description: '',
     })
-    @IsEmail()
+    @IsString()
     username: string;
 
 
