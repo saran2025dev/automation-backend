@@ -15,7 +15,7 @@ async function bootstrap() {
 
   app.setGlobalPrefix('api/v1');
 
-  app.enableCzors({
+  app.enableCors({
     origin: true,
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     allowedHeaders: [

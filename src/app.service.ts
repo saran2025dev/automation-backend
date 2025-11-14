@@ -6,7 +6,7 @@ import PlaywrightUtils from './utils/PlaywrightUtils';
 export class AppService {
 
   async test(step:Step[]) {
-    const browser = await chromium.launch({ headless: false });
+    const browser = await chromium.launch({ headless: true });
 
     const context = await browser.newContext();
     const page = await context.newPage();
